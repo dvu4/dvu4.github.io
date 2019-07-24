@@ -13,15 +13,26 @@ The goal for the second project is to analysis and predict the number of car acc
 
 
 
+
 Table of content
 
-- Gather the data
+- [Get the data](#misc1)
+
+- [Exploratory Data Analysis](#misc2)
+
+- [Model selection](#misc3)
+
+- [Improvements](#misc4)
+
+<!---Table of content
+
+- Get the data
 
 - Exploratory Data Analysis
 
 - Model selection
 
-- Improvements
+- Improvements  --->
 
 
 
@@ -38,10 +49,11 @@ Packages:
 - `Folium` : for interactive map
 
 
+<h2 id="misc1">Get the data</h2> 
 
+<!--- Get the data 
+----------- --->
 
-Get the data 
------------
 
 Now that we know what we want to predict, what are the inputs? What could cause a car crash. There are many factors, some of which I include in this analysis.
 
@@ -82,7 +94,7 @@ Given geoJSON database of Chicago with lots of polygons (census tracts specifica
 
 
 step 1. Import all the required libraries
-```
+```python
 import pandas as pd
 import json
 from shapely.geometry import shape, Point
@@ -90,7 +102,7 @@ from shapely.geometry import shape, Point
 
 
 step 2. Load the dataset and geoinference the zipcode
-``` 
+``` python
 # load GeoJSON file containing sectors
 with open('./dataset/chicago_boundaries_zipcodes.geojson') as f:
     js = json.load(f)
@@ -124,8 +136,11 @@ for i in range(len(df_intersection)):
 <iframe src="public/html/chicago_map.html" height="500px" width="100%"></iframe>
 
 
-Exploratory Data Analysis
------------
+
+<h2 id="misc2">Exploratory Data Analysis</h2> 
+<!--- Exploratory Data Analysis
+----------- --->
+
 By exploring the data and analyzing the vehicle crash and other factors , we noticed there are some correlations in dataset. At first, let's check the relationship between number of crossroads and number of accidents
 
 ![intersection_vs_accident](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_intersection_vs_accident.png)
@@ -160,8 +175,10 @@ I anticipated there is a strong correlation between condition road and car crash
 
 
 
-Model Selection
------------
+<h2 id="misc3">Model selection</h2> 
+<!--- Model Selection
+----------- --->
+
 Based on the exploratory analysis, here are the features I use as independent variabels to fit model :
 
 - `percent_accident_at_night` -- percentage of accident at night 
@@ -187,7 +204,7 @@ For this problem, I am predicting the number of accidents, which is a classic pr
 
 ### Build linear regression model
 
-```
+```python
  X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
 lr_model = LinearRegression()
 lr_model.fit(X_train, y_train)
@@ -211,7 +228,7 @@ Validation R^2 score was: 0.6752109416359127
 
 Let's do some feature engineering to check if we can improve $R^2$  
 
-```
+```python
 X2 = X.copy()
 X2['population2'] = X2['population'] ** 2
 X2['num_crime_/_num_intersection'] = X2['num_crime'] / X2['intersection_count']
@@ -245,7 +262,7 @@ Plot of prediction vs. residuals helps to check homoscedasticity. When we plot t
 
 ### Plot Cooks Distance to detect outliers
 
-```
+```python
 fig, ax = plt.subplots(figsize=(12,8))
 fig = sm.graphics.influence_plot(model_2_fit, alpha  = 0.05, ax = ax, criterion="cooks")
 ```
@@ -266,7 +283,7 @@ LARS is a method for finding/computing the entire regularization path in a way t
 
 ### Predict number of accidents for zipcode 60616 (Chinatown and Armour Square)
 
-```
+```python
 # Predict car accident at zipcode 60616 in December
 crash_id = X_test.index[10]
 
@@ -288,8 +305,10 @@ The predicted number of accidents at zipcode  60616 in  December is  162
 The predicted accidents in Chinatown during December is not too far from the actual one.
 
 
-Conclusion
------------
+<h2 id="misc4">Conclusion</h2> 
+<!--- Conclusion
+----------- --->
+
 
 In this blog, I covered some methods to extract spatial data, cleaning and fitting the regression model to estimate the car crash based on the zipcode. There is much room for improvements. 
 
@@ -305,3 +324,6 @@ In this blog, I covered some methods to extract spatial data, cleaning and fitti
 You can find the project on [Github](https://github.com/dvu4/metis_submission/blob/master/projects/project1/project1.ipynb) and reach me out on [Linkedin](https://www.linkedin.com/in/ducmvu/)
 
 Thank you for reading this article.
+
+
+<!--- https://gist.github.com/VEnis/7465176 --->
