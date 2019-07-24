@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Want to avoid crash acccident
-Don't go to high-crime neighborhoods
+title: Want to avoid crash acccident Don't go to high-crime neighborhoods
 ---
 
-![Image test](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/images/Chicago-Car.jpg)
+![Image test](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/Chicago-Car.jpg)
 
 
 My approach
