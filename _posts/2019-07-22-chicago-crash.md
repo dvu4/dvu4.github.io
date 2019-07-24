@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Want to avoid crash acccident Don't go to high-crime neighborhoods
+title: Want to avoid crash acccident 
+Don't go to high-crime neighborhoods
 ---
 
 ![Image test](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/Chicago-Car.jpg)
@@ -116,8 +117,12 @@ for i in range(len(df_intersection)):
             zipcode.append(feature['properties']['zip'])
 ```
 
-
-<iframe src="public/html/chicago_map.html" height="500px" width="100%"></iframe>
+![crash](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_crash.png)
+<!--- ![pothole](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_pothole.png) --->
+<!--- ![population](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_population.png) --->
+<!--- ![intersection](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_intersection.png) --->
+<!--- ![crime](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_crime.png) --->
+<iframe src="public/html/chicago_map.html" height="500px" width="200%"></iframe>
 
 
 Exploratory Data Analysis
@@ -299,22 +304,3 @@ In this blog, I covered some methods to extract spatial data, cleaning and fitti
 You can find the project on [Github](https://github.com/dvu4/metis_submission/blob/master/projects/project1/project1.ipynb) and reach me out on [Linkedin](https://www.linkedin.com/in/ducmvu/)
 
 Thank you for reading this article.
-
-
-
-
-![pothole](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_pothole.png)
-
-![population](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_population.png)
-
-![intersection](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_intersection.png)
-
-![crash](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_crash.png)
-
-![crime](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_crime.png)
-
-
-
-
-
-
