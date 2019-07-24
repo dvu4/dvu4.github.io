@@ -321,7 +321,7 @@ In this blog, I covered some methods to extract spatial data, cleaning and fitti
 - Prediting car crash can also reduce the risk through enforcement, education. 
 
 
-You can find the project on [Github](https://github.com/dvu4/metis_submission/blob/master/projects/project1/project1.ipynb) and reach me out on [Linkedin](https://www.linkedin.com/in/ducmvu/)
+You can find the project on [Github](https://github.com/dvu4/metis_datascience/tree/master/projects/project2) and reach me out on [Linkedin](https://www.linkedin.com/in/ducmvu/)
 
 Thank you for reading this article.
 
