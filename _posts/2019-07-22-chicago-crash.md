@@ -85,7 +85,7 @@ The city of Chicago publishes those dataset that are worth exploring:
  I find the vehicle accidents to be strongly related to location (Geography), so I will grab the Geojson file, so that we can perform geographic data analysis and aggregate the data at zipcode level and month level.
 
 
-#### - Handling with spatial data to geoinference the zipcode
+#### Handling with spatial data to geoinference the zipcode
 
 I utilized dataset from [OSMnx Street Networks Dataverse - U.S. Street Network Shapefiles, Node/Edge Lists, and GraphML Files](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/CUWWYJ) which provides the lat/lon coordinates of all crossroads in Chicago. There are total 28372 intersections recorded in Chicago. The next step is to retrieve the zipcode for each crossroad.
 
