@@ -1,38 +1,49 @@
+encoding: utf-8
+
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
 # Permalinks
-permalink:           pretty
+permalink:        pretty
 
 # Setup
-title:               Duc Vu
-tagline:             Data Science Blog
-url:                 http://dvu4.github.io
-paginate:            2
-baseurl:             ""
+title:            'Duc Vu'
+tagline:          'Duc Vu'
+description:      'Data Science'
+url:              http://dvu4.github.io
 
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
-
-# About/contact
 author:
-  name:              Duc Vu
-  url:               https://twitter.com/zaglamir
-  email:             zach@thisismetis.com
+  name:           'Duc Vu'
+  url:            http://dvu4.github.io
 
-# Custom varss
-version:             2.0.0
+paginate:         25
+future:           true
+
 github:
-  repo:              https://github.com/dvu4
+  repo:           https://github.com/dvu4/dvu4.github.io
 
-# Gems
 gems:
-  - jekyll-paginate
-  - jekyll-gist
-
-# Page List
-pages_list:       
-  About: '/about'
-  Archive: '/archive'
-  Feed: '/index.html'
+  - jekyll-sitemap
+  
+picture:
+  source: "public/img/_original"
+  output: "public/img"
+  markup: "picturefill"
+  presets:
+    default:
+      ppi: [1]
+      attr:
+        class: "default-img"
+        itemprop: "image"
+      source_large:
+        media: "(min-width: 35em)"
+        width: "720"
+      source_medium:
+        media: "(min-width: 25em)"
+        width: "400"
+      source_small:
+        media: "(min-width: 12.5em)"
+        width: "200"
+      source_default:
+        width: "1000"
