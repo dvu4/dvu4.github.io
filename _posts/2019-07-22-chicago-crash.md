@@ -3,7 +3,7 @@ layout: post
 title: Want to avoid crash acccident - Don't go to high-crime neighborhoods
 ---
 
-![Image test](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/Chicago-Car.jpg)
+![Image test](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_Chicago-Car.jpg)
 
 
 My approach
@@ -245,10 +245,12 @@ Plot of prediction vs. residuals helps to check homoscedasticity. When we plot t
 
 ### Plot Cooks Distance to detect outliers
 
-```fig, ax = plt.subplots(figsize=(12,8))
+```
+fig, ax = plt.subplots(figsize=(12,8))
 fig = sm.graphics.influence_plot(model_2_fit, alpha  = 0.05, ax = ax, criterion="cooks")
 ```
-![pred_res](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/cook_dist.png)
+
+![cook_dist](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_cook_dist.png)
 
 
 
