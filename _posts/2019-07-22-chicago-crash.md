@@ -128,6 +128,35 @@ for i in range(len(df_intersection)):
             zipcode.append(feature['properties']['zip'])
 ```
 
+#### Visualize crash rate with Folium map
+
+
+```python
+chicago_metis = [41.876585, -87.653472]
+chicago_map = folium.Map(chicago_metis, zoom_start=10, tiles="Stamen Terrain") #OpenStreetMap , tiles="Stamen Terrain"
+    
+# reading of the updated GeoJSON file    
+chicago_geo = './dataset/chicago_boundaries_zipcodes.geojson'
+   
+choropleth = folium.Choropleth(
+        geo_data=chicago_geo,
+        data=df_crash,
+        columns = ['zipcode', 'Number_of_Crash'],
+        key_on = 'feature.properties.zip',
+        fill_opacity = 0.7,
+        line_opacity = 0.2,
+        fill_color='BuGn',
+        nan_fill_color='blue',
+        legend_name=(' ').join('Crash'.split('_')).title() ,
+        name='Crash density'
+    ).add_to(chicago_map)
+
+folium.LayerControl().add_to(chicago_map)
+chicago_map.save('chicago_map.html')
+```
+
+Here is the visualization for rate of car accident:
+
 ![crash](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_crash.png)
 <!--- ![pothole](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_pothole.png) --->
 <!--- ![population](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_population.png) --->
