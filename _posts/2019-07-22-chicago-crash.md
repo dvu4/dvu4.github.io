@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Want to avoid crash acccident 
-Don't go to high-crime neighborhoods
+title: Want to avoid crash acccident - Don't go to high-crime neighborhoods
 ---
 
 ![Image test](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/Chicago-Car.jpg)
@@ -122,7 +121,7 @@ for i in range(len(df_intersection)):
 <!--- ![population](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_population.png) --->
 <!--- ![intersection](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_intersection.png) --->
 <!--- ![crime](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_crime.png) --->
-<iframe src="public/html/chicago_map.html" height="500px" width="200%"></iframe>
+<iframe src="public/html/chicago_map.html" height="500px" width="100%"></iframe>
 
 
 Exploratory Data Analysis
