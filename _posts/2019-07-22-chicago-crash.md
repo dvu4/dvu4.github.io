@@ -179,7 +179,7 @@ I anticipated there is a strong correlation between condition road and car crash
 <!--- Model Selection
 ----------- --->
 
-Based on the exploratory analysis, here are the features I use as independent variabels to fit model :
+Based on the exploratory analysis, here are the features I use as independent variables to fit model :
 
 - `percent_accident_at_night` -- percentage of accident at night 
 - `percent_accident_in_snow`  -- percentage of accident in snow 
