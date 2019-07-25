@@ -62,7 +62,7 @@ Now that we know what we want to predict, what are the inputs? What could cause 
 
 - Time features: hour of day, day of the week, month of the year.
 
-- Static features such as numbero of intersectiosn , speed limit, average traffic volumes, etc
+- Static features such as number of intersection , speed limit, average traffic volumes, etc
 
 - Human factors such as population density, etc
 
@@ -82,7 +82,7 @@ The city of Chicago publishes those dataset that are worth exploring:
 - [Chicago GeoJSON](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-ZIP-Codes/gdcf-axmw)
 
 
- I find the vehicle accidents to be strongly related to location (Geography), so I will grab the Geojson file, so that we can perform geographic data analysis and aggregate the data at zipcode level and month level.
+ I find the vehicle accidents to be strongly related to location (Geography), so I will grab the Geojson file, so that I can perform geographic data analysis and aggregate the data at zipcode level and month level.
 
 
 #### Handling with spatial data to geoinference the zipcode
@@ -162,7 +162,7 @@ Here is the visualization for rate of car accident:
 <!--- ![population](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_population.png) --->
 <!--- ![intersection](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_intersection.png) --->
 <!--- ![crime](https://raw.githubusercontent.com/dvu4/dvu4.github.io/master/public/images/p2_crime.png) --->
-<iframe src="public/html/chicago_map.html" height="500px" width="100%"></iframe>
+<iframe src="public/html/Number_of_Crash_map.html" height="500px" width="100%"></iframe>
 
 
 
@@ -247,15 +247,16 @@ print('\nTrain R^2 score was:', train_score)
 print('\nValidation R^2 score was:', val_score)
 ```
 
-Here is the $R^2$ score :
+Here is the $`R^2`$ score :
 ```
-Train R^2 score was: 0.6717622381724969
-Validation R^2 score was: 0.6752109416359127
+Train $`R^2`$ score was: 0.6717622381724969
+Validation $`R^2`$ score was: 0.6752109416359127
 ```
 
 
 
-Let's do some feature engineering to check if we can improve $R^2$  
+
+Let's do some feature engineering to improve $`R^2`$ 
 
 ```python
 X2 = X.copy()
@@ -269,17 +270,17 @@ X2['num_crime_x_num_pothole'] = X2['num_crime'] * X2['num_potholes']
 Also let's check the accuracy of the model again.
 
 ```
-Train R^2 score was: 0.7465677013645713
-Validation R^2 score was: 0.7505576728834923
+Train $`R^2`$ score was: 0.7465677013645713
+Validation $`R^2`$ score was: 0.7505576728834923
 ```
 
-Surprisingly, $R^2$ score improved significantly which is considered quite good.
+Surprisingly, $`R^2`$ score improved significantly which is considered quite good.
 
 I also fitted polynomial model with data and the result is much better
 
 ```
-Degree 2 polynomial regression val R^2: 0.814
-Degree 2 polynomial regression test R^2: 0.812
+Degree 2 polynomial regression val $`R^2`$: 0.814
+Degree 2 polynomial regression test $`R^2`$: 0.812
 ```
 
 ### Check the quality of regression model by plotting residual and prediction
@@ -341,7 +342,7 @@ The predicted accidents in Chinatown during December is not too far from the act
 
 In this blog, I covered some methods to extract spatial data, cleaning and fitting the regression model to estimate the car crash based on the zipcode. There is much room for improvements. 
 
-- Deploying different algorithms to improve $R^2$ score and the accuracy of model. 
+- Deploying different algorithms to improve $`R^2`$ score and the accuracy of model. 
 
 
 - Adding more features such as ridesharing data or median income to figure out the affect of those new features on model.
